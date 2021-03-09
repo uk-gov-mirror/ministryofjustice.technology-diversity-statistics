@@ -1,31 +1,35 @@
 {
-  "name": "normalising.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "technology-diversity-statistics",
+  "version": "2.0.0",
+  "description": "Generates a webpage displaying MoJ Digital & Technology diversity statistics",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run dev -- --watch",
+    "deploy": "node app/js/gh-pages-deploy.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/normalising/normalising.github.io.git"
+    "url": "git+https://github.com/ministryofjustice/technology-diversity-statistics.git"
   },
-  "author": "Chris Hanes",
+  "author": "Chris Hanes | Damien Wilson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/normalising/normalising.github.io/issues"
+    "url": "https://github.com/ministryofjustice/technology-diversity-statistics/issues"
   },
   "homepage": "https://normalising.github.io",
-  "dependencies": {
-    "govuk-elements-sass": "^3.1.0",
-    "govuk_frontend_toolkit": "^6.0.3",
-    "govuk_template_jinja": "^0.22.1",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "require-dir": "^0.3.2",
-    "run-sequence": "^1.2.2"
+  "devDependencies": {
+    "chokidar": "^3.5.1",
+    "cross-env": "^7.0",
+    "execa": "latest",
+    "govuk-frontend": "^3.11.0",
+    "laravel-mix": "^6.0.13",
+    "nunjucks": "^3.2.3",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   }
 }

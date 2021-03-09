@@ -1,0 +1,23 @@
+$path: "/dist/images/";
+
+@import 'node_modules/govuk-frontend/govuk/all';
+
+#global-header .header-wrapper .header-global .header-content {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  width: 75%;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 960px) {
+  .column {
+    float: none;
+    width: 100%;
+  }
+}
