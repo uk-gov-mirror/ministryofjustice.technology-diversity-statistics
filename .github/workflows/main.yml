@@ -49,4 +49,4 @@ jobs:
       - name: Commiting
         run: git --work-tree dist commit -m "gh-pages deployment"
       - name: Pushing
-        run: git push origin HEAD:gh-pages --force'
+        run: git push origin HEAD:gh-pages --force
