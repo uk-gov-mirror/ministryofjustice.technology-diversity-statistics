@@ -32,7 +32,7 @@ jobs:
 
       # Build the dist directory
       - name: Build the dist directory
-        run: npm run deploy
+        run: npm run build
 
       # Copy subtree to gh-pages orphan branch
       - name: Copy subtree to gh-pages orphan branch
