@@ -44,5 +44,8 @@ jobs:
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           message: 'gh-pages deployment'
           add: 'dist --force'
-          push: origin HEAD:gh-pages --force
-          pull_strategy: 'NO-PULL'
+          push: false
+
+      # Push files in dist to gh-pages
+      - name: Pushing subtree
+        run: git subtree push --prefix dist origin HEAD:gh-pages
