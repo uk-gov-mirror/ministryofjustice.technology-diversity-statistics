@@ -34,7 +34,7 @@ jobs:
 
       # Build the dist directory
       - name: Build the dist directory
-        run: npm run build
+        run: npm run build && ll
 
       # Assign an auth for add and commit
       - name: Commit changes
@@ -43,5 +43,5 @@ jobs:
           author_name: github-actions
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           message: 'gh-pages deployment'
-          add: 'dist/\*'
+          add: 'dist'
           push: origin gh-pages --force
