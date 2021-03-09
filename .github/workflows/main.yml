@@ -30,6 +30,10 @@ jobs:
       - name: Install node modules
         run: npm install
 
-      # Runs a single command using the runners shell
-      - name: Run deployment to GH Pages
+      # Build the dist directory
+      - name: Build the dist directory
         run: npm run deploy
+
+      # Copy subtree to gh-pages orphan branch
+      - name: Copy subtree to gh-pages orphan branch
+        run: git subtree push --prefix dist origin gh-pages
