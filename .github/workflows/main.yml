@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI deploy GitHub page
 
 # Controls when the action will run. 
 on:
@@ -28,12 +28,10 @@ jobs:
         with:
           node-version: '14'
 
-      # Add auth
-      - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --local user.name "GitHub Action"
-
-      # Checkout gh-pages
-      - name: Checkout gh-pages
-        run: git checkout --orphan gh-pages
+      # Local authentication
+      - run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
 
       # Begin node work
       - name: Install node modules
@@ -43,10 +41,14 @@ jobs:
       - name: Start the build
         run: npm run build
 
-      # Add, commit and push
-      - name: Add, commit and push
+      # Stage
+      - name: Stage public files
         run: git --work-tree dist add --all
-      - name: Commiting
+
+      # Commit
+      - name: Commit new files
         run: git --work-tree dist commit -m "gh-pages deployment"
-      - name: Pushing
+
+      # Push
+      - name: Pushing to HEAD ref
         run: git push origin HEAD:gh-pages --force

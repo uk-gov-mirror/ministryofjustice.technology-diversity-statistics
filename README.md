@@ -1,1 +1,2 @@
-# Repository for [https://ministryofjustice.github.io/technology-diversity-statistics/](https://ministryofjustice.github.io/technology-diversity-statistics/)
+#Technology & Diversity Statistics
+This repo serves as the build 
