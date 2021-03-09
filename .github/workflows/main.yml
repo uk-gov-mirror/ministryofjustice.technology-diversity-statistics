@@ -34,7 +34,7 @@ jobs:
 
       # Build the dist directory
       - name: Build the dist directory
-        run: npm run build && ll
+        run: npm run build && ls -al
 
       # Assign an auth for add and commit
       - name: Commit changes
