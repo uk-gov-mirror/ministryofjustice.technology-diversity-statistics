@@ -36,10 +36,6 @@ jobs:
       - name: Build the dist directory
         run: npm run build
 
-      # Copy subtree to gh-pages orphan branch
-      - name: Copy to gh-pages
-        run: git subtree push --prefix dist origin gh-pages
-
       # Assign an auth for add and commit
       - name: Commit changes
         uses: EndBug/add-and-commit@v7.0.0
