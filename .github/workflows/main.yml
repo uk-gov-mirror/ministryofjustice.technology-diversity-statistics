@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: '14'
 
+      # Add auth
+      - run: git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --local user.name "GitHub Action"
+
       # Checkout gh-pages
       - name: Checkout gh-pages
         run: git checkout --orphan gh-pages
@@ -40,12 +43,10 @@ jobs:
       - name: Start the build
         run: npm run build
 
-      # Assign an auth for add and commit
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v7.0.0
-        with:
-          author_name: github-actions
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
-          message: 'gh-pages deployment'
-          add: --work-tree dist --force
-          push: origin HEAD:gh-pages --force
+      # Add, commit and push
+      - name: Add, commit and push
+        run: git --work-tree dist add --all
+      - name: Commiting
+        run: git --work-tree dist commit -m "gh-pages deployment"
+      - name: Pushing
+        run: git push origin HEAD:gh-pages --force'
