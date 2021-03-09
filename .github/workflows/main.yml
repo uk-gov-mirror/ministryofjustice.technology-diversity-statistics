@@ -48,4 +48,4 @@ jobs:
 
       # Push files in dist to gh-pages
       - name: Pushing subtree
-        run: git subtree push --prefix dist origin HEAD:gh-pages
+        run: git subtree push --prefix dist origin gh-pages
