@@ -45,3 +45,4 @@ jobs:
           message: 'gh-pages deployment'
           add: 'dist --force'
           push: origin HEAD:gh-pages --force
+          pull_strategy: 'NO-PULL'
