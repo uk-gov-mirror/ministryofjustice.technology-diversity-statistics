@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
+
+      # Begin node work
       - name: Install node modules
         run: npm install
 
@@ -35,5 +37,15 @@ jobs:
         run: npm run build
 
       # Copy subtree to gh-pages orphan branch
-      - name: Copy subtree to gh-pages orphan branch
+      - name: Copy to gh-pages
         run: git subtree push --prefix dist origin gh-pages
+
+      # Assign an auth for add and commit
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7.0.0
+          with:
+            author_name: github-actions
+            author_email: 41898282+github-actions[bot]@users.noreply.github.com
+            message: 'gh-pages deployment'
+            add: 'dist/\*'
+            push: origin gh-pages --force
