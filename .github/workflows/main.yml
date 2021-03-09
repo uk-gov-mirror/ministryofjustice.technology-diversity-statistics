@@ -43,5 +43,5 @@ jobs:
           author_name: github-actions
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           message: 'gh-pages deployment'
-          add: 'dist'
+          add: 'dist --force'
           push: origin gh-pages --force
