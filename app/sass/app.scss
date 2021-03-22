@@ -25,7 +25,10 @@ $base_root : '/technology-diversity-statistics/assets/';
     src: url(#{$base_root}fonts/bold-b542beb274-v2.woff2) format("woff2"), url(#{$base_root}fonts/bold-affa96571d-v2.woff) format("woff");
     font-display: fallback;
 }
-
+.govuk-header__container {
+    margin-bottom: 0;
+    border-bottom: none;
+}
 .govuk-footer__copyright-logo {
     background-image: url(#{$base_root}images/govuk-crest.png);
 }
