@@ -5,7 +5,7 @@ docker-compose up -d
 
 # launch in browser
 sleep 2
-python -m webbrowser http://localhost:8000
+python -m webbrowser http://localhost:8000/technology-diversity-statistics/
 
 # regen assets and watch for changes
 make watch

@@ -8,22 +8,44 @@
 @import "node_modules/govuk-frontend/govuk/utilities/all";
 @import "node_modules/govuk-frontend/govuk/overrides/all";
 
+$base_root : '/technology-diversity-statistics/assets/';
+
+@font-face {
+    font-family: "GDS Transport";
+    font-style: normal;
+    font-weight: normal;
+    src: url(#{$base_root}fonts/light-94a07e06a1-v2.woff2) format("woff2"), url(#{$base_root}fonts/light-f591b13f7d-v2.woff) format("woff");
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: "GDS Transport";
+    font-style: normal;
+    font-weight: bold;
+    src: url(#{$base_root}fonts/bold-b542beb274-v2.woff2) format("woff2"), url(#{$base_root}fonts/bold-affa96571d-v2.woff) format("woff");
+    font-display: fallback;
+}
+
+.govuk-footer__copyright-logo {
+    background-image: url(#{$base_root}images/govuk-crest.png);
+}
+
 #global-header .header-wrapper .header-global .header-content {
-  color: #fff;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0;
-  width: 75%;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    width: 75%;
 }
 
 .column {
-  float: left;
-  width: 50%;
+    float: left;
+    width: 50%;
 }
 
 @media screen and (max-width: 960px) {
-  .column {
-    float: none;
-    width: 100%;
-  }
+    .column {
+        float: none;
+        width: 100%;
+    }
 }
