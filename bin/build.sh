@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-rm -r ./dist
+if [ -d "./dist" ]; then
+  rm -r ./dist
+fi
 
 npm install
 npm run dev
