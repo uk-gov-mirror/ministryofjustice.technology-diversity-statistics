@@ -31,4 +31,4 @@ down:
 
 # Open a bash shell on the running container
 bash:
-	docker-compose exec web-service bash
+	docker-compose exec -w /usr/share/nginx/html/technology-diversity-statistics web-service bash
