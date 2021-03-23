@@ -2,21 +2,25 @@
 
 This repo holds the core files for building the Technology & Diversity Statistics webpage. 
 
-You can find the page here [https://ministryofjustice.github.io/technology-diversity-statistics/](https://ministryofjustice.github.io/technology-diversity-statistics/)
+You can find the page here:
 
-## How the build process has been approached
+[https://ministryofjustice.github.io/technology-diversity-statistics/](https://ministryofjustice.github.io/technology-diversity-statistics/)
 
-The idea behind this project is to use as little code as possible whilst achieving the desired result for the project and end user. This initial premise has led to the use of a GitHub Action to perform the build and deployment process, and the use of Docker to achieve a simple and effective development environment.
+### How the build process has been approached
 
-By using a GitHub action in this way we can perform continuous integration (CI) tasks in the background. 
+The idea behind this project is to use as little code as possible to provide a simple development experience whilst also achieving an exemplary result for the end user.
+
+The approach has led to the creation of an automated development and deployment system. This system uses Docker to achieve a simple and effective development environment and a GitHub Action to perform continuous integration (CI) tasks.
 
 ## Development
 ### Requirements
 
-The following services must be available on your system:
+The following software must be available locally:
 
-1. Docker
-2. NodeJS
+1. MacOS (or other [UNIX](https://en.wikipedia.org/wiki/Unix) based system with [POSIX](https://en.wikipedia.org/wiki/POSIX) compatibility) 
+2. Docker
+3. NodeJS (npm)
+4. Git
 
 ### Quick start
 
@@ -26,7 +30,7 @@ Open your terminal and run the following chained command. It will change to your
 cd ~ && git clone https://github.com/ministryofjustice/technology-diversity-statistics.git && cd technology-diversity-statistics && make build && make launch
 ```
 
-### Commands explained
+#### Commands explained
 
 1. Clone this repo to your local machine and change directories.
     ```bash
@@ -39,21 +43,25 @@ cd ~ && git clone https://github.com/ministryofjustice/technology-diversity-stat
     make build
     ```
 
-3. Build and run the docker image. Once Docker is running the site will automatically launch in your web browser and start a 'watch' session on your codebase.
+3. Build and run the docker image. Once Docker is running the site will automatically launch in your web browser. The terminal will complete by beginning a 'watch' session to monitor asset changes; assets will be compiled.
     ```bash
     make launch
     ```
+_For more detail please view the `make` commands glossary below._
 
-## Deployment
+## Auto Deployment
 
-Once a change has been either pushed to the main branch or, a PR has been merged into main, the following will take place:
+Building a GitHub page has been made simple by using an action as our build service.
 
-- CI begins background tasks
-- Install all required packages `npm install`
-- Build css/js files and introduce libraries `npm run build` (laravel mix)
-- Stage files from the `dist/` directory 
-- Commit staged files
-- Push new site files to the _orphaned_ `gh-pages` branch
+A build will trigger once a commit has been either pushed or merged (PR) into the main branch or, the action gets triggered manually from the Actions tab. The following will take place:
+
+- GitHub Action begins background tasks:
+  - Install all required packages `npm install`
+  - Build css/js files and introduce libraries `npm run build` (laravel mix)
+  - Stage files from the `dist/` directory 
+  - Commit staged files
+  - Push new site files to the _orphaned_ `gh-pages` branch
+  - GitHub Pages rebuild and publish gets triggered by previous push
 
 ## Make commands
 
