@@ -2,8 +2,6 @@ version: '3'
 services:
   web-service:
     image: nginx
-    environment:
-      VIRTUAL_HOST: techds.docker
     ports:
       - 8000:80
     volumes:
