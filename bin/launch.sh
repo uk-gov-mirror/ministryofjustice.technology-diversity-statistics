@@ -8,4 +8,4 @@ sleep 2
 python -m webbrowser http://localhost:8000/technology-diversity-statistics/
 
 # regen assets and watch for changes
-make watch
+npm run watch

@@ -8,17 +8,9 @@ build:
 launch:
 	bin/launch.sh
 
-# Run the project build script
-watch:
-	npm run watch
-
-# Remove ignored git files – e.g. composer dependencies and built theme assets
-# But keep .env file, .idea directory (PhpStorm config), and uploaded media files
+# Remove ignored git files – e.g. built theme assets
+# But keep .idea directory (PhpStorm config)
 clean:
-	@if [ -d ".git" ]; then git clean -xdf --exclude ".env" --exclude ".idea" --exclude "web/app/uploads"; fi
-
-# Remove all ignored git files (including media files)
-deep-clean:
 	@if [ -d ".git" ]; then git clean -xdf --exclude ".idea"; fi
 
 # Run the application
