@@ -23,7 +23,7 @@ jobs:
       # B E G I N   P R O C E S S
       # Require third party libraries
       - name: Installing app dependancies
-        run: npm install
+        run: npm --silent install
 
       # Build the dist directory
       - name: Compiling assets
