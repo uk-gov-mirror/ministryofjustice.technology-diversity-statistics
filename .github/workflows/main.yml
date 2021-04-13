@@ -1,5 +1,5 @@
-# Ministry of Justice Digital & Technology
-# Build and deploy app to GitHub Pages
+# Ministry of Justice - Digital & Technology
+# Build and deploy application to GitHub Pages
 
 name: CI Deploy Page
 on:
@@ -12,18 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
-
-      # Local authentication using GitHub user
       - run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Action"
 
-      # Begin node work
+      # B E G I N   P R O C E S S
+      # Require third party libraries
       - name: Installing app dependancies
         run: npm install
 
@@ -32,7 +30,7 @@ jobs:
         run: npm run build
 
       # Stage
-      - name: Staging application for deploy
+      - name: Staging application for deployment
         run: git --work-tree dist add --all
 
       # Commit
