@@ -34,21 +34,21 @@ jobs:
           git config --local user.name "GitHub Action"
 
       # Begin node work
-      - name: Install node modules
+      - name: Installing app dependancies
         run: npm install
 
       # Build the dist directory
-      - name: Start the build
+      - name: Compiling assets
         run: npm run build
 
       # Stage
-      - name: Stage public files
+      - name: Staging application for deploy
         run: git --work-tree dist add --all
 
       # Commit
-      - name: Commit new files
+      - name: Committing changes
         run: git --work-tree dist commit -m "gh-pages deployment"
 
       # Push
-      - name: Pushing to HEAD ref
+      - name: Pushing to GH Pages for deployment
         run: git push origin HEAD:gh-pages --force
